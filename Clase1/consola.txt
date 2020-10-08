@@ -1,0 +1,105 @@
+λ mongod
+{"t":{"$date":"2020-10-08T00:36:45.548-03:00"},"s":"I",  "c":"CONTROL",  "id":23285,   "ctx":"main","msg":"Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols 'none'"}
+{"t":{"$date":"2020-10-08T00:36:46.008-03:00"},"s":"W",  "c":"ASIO",     "id":22601,   "ctx":"main","msg":"No TransportLayer configured during NetworkInterface startup"}
+{"t":{"$date":"2020-10-08T00:36:46.009-03:00"},"s":"I",  "c":"NETWORK",  "id":4648602, "ctx":"main","msg":"Implicit TCP FastOpen in use."}
+{"t":{"$date":"2020-10-08T00:36:46.010-03:00"},"s":"I",  "c":"STORAGE",  "id":4615611, "ctx":"initandlisten","msg":"MongoDB starting","attr":{"pid":3092,"port":27017,"dbPath":"C:/data/db/","architecture":"64-bit","host":"DESKTOP-35A830Q"}}
+{"t":{"$date":"2020-10-08T00:36:46.010-03:00"},"s":"I",  "c":"CONTROL",  "id":23398,   "ctx":"initandlisten","msg":"Target operating system minimum version","attr":{"targetMinOS":"Windows 7/Windows Server 2008 R2"}}
+{"t":{"$date":"2020-10-08T00:36:46.010-03:00"},"s":"I",  "c":"CONTROL",  "id":23403,   "ctx":"initandlisten","msg":"Build Info","attr":{"buildInfo":{"version":"4.4.1","gitVersion":"ad91a93a5a31e175f5cbf8c69561e788bbc55ce1","modules":[],"allocator":"tcmalloc","environment":{"distmod":"windows","distarch":"x86_64","target_arch":"x86_64"}}}}
+{"t":{"$date":"2020-10-08T00:36:46.010-03:00"},"s":"I",  "c":"CONTROL",  "id":51765,   "ctx":"initandlisten","msg":"Operating System","attr":{"os":{"name":"Microsoft Windows 10","version":"10.0 (build 18362)"}}}
+{"t":{"$date":"2020-10-08T00:36:46.011-03:00"},"s":"I",  "c":"CONTROL",  "id":21951,   "ctx":"initandlisten","msg":"Options set by command line","attr":{"options":{}}}
+{"t":{"$date":"2020-10-08T00:36:46.011-03:00"},"s":"E",  "c":"STORAGE",  "id":20557,   "ctx":"initandlisten","msg":"DBException in initAndListen, terminating","attr":{"error":"NonExistentPath: Data directory C:\\data\\db\\ not found. Create the missing directory or specify another path using (1) the --dbpath command line option, or (2) by adding the 'storage.dbPath' option in the configuration file."}}
+{"t":{"$date":"2020-10-08T00:36:46.012-03:00"},"s":"I",  "c":"REPL",     "id":4784900, "ctx":"initandlisten","msg":"Stepping down the ReplicationCoordinator for shutdown","attr":{"waitTimeMillis":10000}}
+{"t":{"$date":"2020-10-08T00:36:46.012-03:00"},"s":"I",  "c":"COMMAND",  "id":4784901, "ctx":"initandlisten","msg":"Shutting down the MirrorMaestro"}
+{"t":{"$date":"2020-10-08T00:36:46.012-03:00"},"s":"I",  "c":"SHARDING", "id":4784902, "ctx":"initandlisten","msg":"Shutting down the WaitForMajorityService"}
+{"t":{"$date":"2020-10-08T00:36:46.012-03:00"},"s":"I",  "c":"NETWORK",  "id":20562,   "ctx":"initandlisten","msg":"Shutdown: going to close listening sockets"}
+{"t":{"$date":"2020-10-08T00:36:46.012-03:00"},"s":"I",  "c":"NETWORK",  "id":4784905, "ctx":"initandlisten","msg":"Shutting down the global connection pool"}
+{"t":{"$date":"2020-10-08T00:36:46.012-03:00"},"s":"I",  "c":"STORAGE",  "id":4784906, "ctx":"initandlisten","msg":"Shutting down the FlowControlTicketholder"}
+{"t":{"$date":"2020-10-08T00:36:46.012-03:00"},"s":"I",  "c":"-",        "id":20520,   "ctx":"initandlisten","msg":"Stopping further Flow Control ticket acquisitions."}
+{"t":{"$date":"2020-10-08T00:36:46.012-03:00"},"s":"I",  "c":"NETWORK",  "id":4784918, "ctx":"initandlisten","msg":"Shutting down the ReplicaSetMonitor"}
+{"t":{"$date":"2020-10-08T00:36:46.012-03:00"},"s":"I",  "c":"SHARDING", "id":4784921, "ctx":"initandlisten","msg":"Shutting down the MigrationUtilExecutor"}
+{"t":{"$date":"2020-10-08T00:36:46.013-03:00"},"s":"I",  "c":"CONTROL",  "id":4784925, "ctx":"initandlisten","msg":"Shutting down free monitoring"}
+{"t":{"$date":"2020-10-08T00:36:46.013-03:00"},"s":"I",  "c":"FTDC",     "id":4784926, "ctx":"initandlisten","msg":"Shutting down full-time data capture"}
+{"t":{"$date":"2020-10-08T00:36:46.013-03:00"},"s":"I",  "c":"STORAGE",  "id":4784927, "ctx":"initandlisten","msg":"Shutting down the HealthLog"}
+{"t":{"$date":"2020-10-08T00:36:46.013-03:00"},"s":"I",  "c":"STORAGE",  "id":4784929, "ctx":"initandlisten","msg":"Acquiring the global lock for shutdown"}
+{"t":{"$date":"2020-10-08T00:36:46.013-03:00"},"s":"I",  "c":"-",        "id":4784931, "ctx":"initandlisten","msg":"Dropping the scope cache for shutdown"}
+{"t":{"$date":"2020-10-08T00:36:46.013-03:00"},"s":"I",  "c":"CONTROL",  "id":20565,   "ctx":"initandlisten","msg":"Now exiting"}
+{"t":{"$date":"2020-10-08T00:36:46.013-03:00"},"s":"I",  "c":"CONTROL",  "id":23138,   "ctx":"initandlisten","msg":"Shutting down","attr":{"exitCode":100}}
+
+C:\Program Files\Cmder
+λ mongo
+MongoDB shell version v4.4.1
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("e9a9b84a-a345-4cbd-bb0a-3618595a9f06") }
+MongoDB server version: 4.4.1
+---
+The server generated these startup warnings when booting:
+        2020-10-07T22:31:31.218-03:00: ***** SERVER RESTARTED *****
+        2020-10-07T22:31:32.902-03:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show dbs
+admin       0.000GB
+config      0.000GB
+local       0.000GB
+> use futbolfifa
+switched to db futbolfifa
+> db.createCollection(“players”)
+{ "ok" : 1 }
+> show collections
+players
+> db.players.insert([{ name: "Cristiano Ronaldo", surname: "dos Santos Aveiro", position: "FW", birthdate: "05/02/1985", foot: "R", country: "Portugal" }, { name: "Lionel", surname: "Messi", position: "FW", birthdate: "24-06-1987", foot: "L", country: "Argentina" }, { name: "Virgil", surname: "van Dijk", position: "DF", birthdate: "08-07-1991", foot: "R", country: "Netherlands" }, { name: "Manuel", surname: "Neuer", position: "GK", birthdate: "27-03-1986", foot: "L", country: "Germany" }, { name: "Kevin", surname: "De Bruyne", position: "MF", birthdate: "28-06-1991", foot: "R", country: "Belgium" }])
+BulkWriteResult({
+        "writeErrors" : [ ],
+        "writeConcernErrors" : [ ],
+        "nInserted" : 5,
+        "nUpserted" : 0,
+        "nMatched" : 0,
+        "nModified" : 0,
+        "nRemoved" : 0,
+        "upserted" : [ ]
+})
+> db.players.find ({})
+{ "_id" : ObjectId("5f7e8a5c0f64834d36b69919"), "name" : "Cristiano Ronaldo", "surname" : "dos Santos Aveiro", "position" : "FW", "birthdate" : "05/02/1985", "foot" : "R", "country" : "Portugal" }
+{ "_id" : ObjectId("5f7e8a5c0f64834d36b6991a"), "name" : "Lionel", "surname" : "Messi", "position" : "FW", "birthdate" : "24-06-1987", "foot" : "L", "country" : "Argentina" }
+{ "_id" : ObjectId("5f7e8a5c0f64834d36b6991b"), "name" : "Virgil", "surname" : "van Dijk", "position" : "DF", "birthdate" : "08-07-1991", "foot" : "R", "country" : "Netherlands" }
+{ "_id" : ObjectId("5f7e8a5c0f64834d36b6991c"), "name" : "Manuel", "surname" : "Neuer", "position" : "GK", "birthdate" : "27-03-1986", "foot" : "L", "country" : "Germany" }
+{ "_id" : ObjectId("5f7e8a5c0f64834d36b6991d"), "name" : "Kevin", "surname" : "De Bruyne", "position" : "MF", "birthdate" : "28-06-1991", "foot" : "R", "country" : "Belgium" }
+> db.createCollection("leagues")
+{ "ok" : 1 }
+>db.leagues.insert([{ name: "Premier League", country: "England" }, { name: "La Liga", country: "Spain" }, { name: "Lega Calcio", country: "Italy" }, { name: "BundesLiga", country: "Germany" }, { name: "Ligue1", country: "France"}, { name: "Liga Sagres", country: "Portugal" }])
+BulkWriteResult({
+        "writeErrors" : [ ],
+        "writeConcernErrors" : [ ],
+        "nInserted" : 6,
+        "nUpserted" : 0,
+        "nMatched" : 0,
+        "nModified" : 0,
+        "nRemoved" : 0,
+        "upserted" : [ ]
+})
+> db.createCollection("clubs")
+{ "ok" : 1 }
+> db.clubs.insert([{ name: "Real Madrid", country: "Spain" }, { name: "Manchester United", country: "England" }, { name: "Juventus", country: "Italy" }, { name: "Bayern Munchen", country: "Germany" }, { name: "Ajax", country: "Netherlands"}, { name: "PSG", country: "France" }])
+BulkWriteResult({
+        "writeErrors" : [ ],
+        "writeConcernErrors" : [ ],
+        "nInserted" : 6,
+        "nUpserted" : 0,
+        "nMatched" : 0,
+        "nModified" : 0,
+        "nRemoved" : 0,
+        "upserted" : [ ]
+})
+>
+
+
