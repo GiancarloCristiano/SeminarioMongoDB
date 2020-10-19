@@ -1,0 +1,21 @@
+>> db.players.find()
+{ "_id" : ObjectId("5f7e8a5c0f64834d36b69919"), "name" : "Cristiano Ronaldo", "surname" : "dos Santos Aveiro", "position" : "FW", "birthdate" : "05/02/1985", "foot" : "R", "country" : "Portugal" }
+{ "_id" : ObjectId("5f7e8a5c0f64834d36b6991a"), "name" : "Lionel", "surname" : "Messi", "position" : "FW", "birthdate" : "24-06-1987", "foot" : "L", "country" : "Argentina" }
+{ "_id" : ObjectId("5f7e8a5c0f64834d36b6991b"), "name" : "Virgil", "surname" : "van Dijk", "position" : "DF", "birthdate" : "08-07-1991", "foot" : "R", "country" : "Netherlands" }
+{ "_id" : ObjectId("5f7e8a5c0f64834d36b6991c"), "name" : "Manuel", "surname" : "Neuer", "position" : "GK", "birthdate" : "27-03-1986", "foot" : "L", "country" : "Germany" }
+{ "_id" : ObjectId("5f7e8a5c0f64834d36b6991d"), "name" : "Kevin", "surname" : "De Bruyne", "position" : "MF", "birthdate" : "28-06-1991", "foot" : "R", "country" : "Belgium" }
+> db.players.find().limit(1)
+{ "_id" : ObjectId("5f7e8a5c0f64834d36b69919"), "name" : "Cristiano Ronaldo", "surname" : "dos Santos Aveiro", "position" : "FW", "birthdate" : "05/02/1985", "foot" : "R", "country" : "Portugal" }
+> db.players.find({}, {name: 1})
+{ "_id" : ObjectId("5f7e8a5c0f64834d36b69919"), "name" : "Cristiano Ronaldo" }
+{ "_id" : ObjectId("5f7e8a5c0f64834d36b6991a"), "name" : "Lionel" }
+{ "_id" : ObjectId("5f7e8a5c0f64834d36b6991b"), "name" : "Virgil" }
+{ "_id" : ObjectId("5f7e8a5c0f64834d36b6991c"), "name" : "Manuel" }
+{ "_id" : ObjectId("5f7e8a5c0f64834d36b6991d"), "name" : "Kevin" }
+> db.players.find({},{name: 1, _id: 0})
+{ "name" : "Cristiano Ronaldo" }
+{ "name" : "Lionel" }
+{ "name" : "Virgil" }
+{ "name" : "Manuel" }
+{ "name" : "Kevin" }
+>

@@ -1,0 +1,20 @@
+Manuel Garcia Amaro19:25
+dateBirth: Date('Jun 8, 1999')
+
+Manuel Rivas Alfano19:25
+"fecha_nacimiento": new Date("1997-04-22")
+así me anduvo también
+
+Tú19:25
+muchas gracias!
+
+Nicolás Tourné19:26
+db.example.insert({"date":ISODate("2016-03-03T08:00:00.000")});
+
+Exequiel Hernando19:27
+ISODate("1980-06-06T21:02:18.994Z")
+https://docs.mongodb.com/manual/reference/method/Date/
+Gian, fijate ese link que te explica el uso de fechas
+
+Exequiel Hernando19:29
+https://docs.mongodb.com/manual/reference/operator/update/currentDate/
