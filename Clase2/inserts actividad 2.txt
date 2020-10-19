@@ -1,0 +1,18 @@
+﻿db.movies.insert([{ title: "Dexter", year: 2006, rating: 4.8, genre: "Crime drama", description: "TBC", actors: [ "Michael C. Hall", "Julie Benz", "Jennifer Carpenter" ], country: "US", income: 10000000 , duration: 96 },
+{ title: "Breaking Bad", year: 2008, rating: 5.0, genre: "Crime drama", description: "TBC", actors: [ "Bryan Cranston", "Anna Gunn", "Aaron Paul" ], country: "US", income: 99999999 , duration: 62 },
+{ title: "Money Heist", year: 2017, rating: 4.2, genre: "Crime drama", description: "TBC", actors: [ "Úrsula Corberó", "Álvaro Morte", "Itziar Ituño" ], country: "Spain", income: 50000000 , duration: 31 },
+{ title: "The Pretenders", year: 2002, rating: 3.8, genre: "Comedy drama", description: "TBC", actors: [ "Federico D'Elía", "Alejandro Fiore", "Diego Peretti", "Martin Seefeld" ], country: "Argentina", income: 3000000 , duration: 24 }])
+
+db.movies.insertOne({ title: "The Simpsons", year: 1989, rating: 4.4, genre: "Animated sitcom", description: "TBC", actors: [ "Dan Castellaneta", "Julie Kavner", "Nancy Cartwright" ], country: "US", income: 1000000000 , duration: 687 })
+
+db.movies.insertMany([{ title: "Stranger Things", year: 2016, rating: 4.1, genre: "Science fiction", description: "TBC", actors: [ "Winona Ryder", "David Harbour", "Finn Wolfhard" ], country: "US", income: 5000000 , duration: 25 },
+{ title: "Merlí", year: 2015, rating: 3.7, genre: "Comedy drama", description: "TBC", actors: [ "Francesc Orella", "Pere Ponce", "Pau Durà" ], country: "Spain", income: 999999 , duration: 40 }])
+
+
+{ title: "", year: , rating: , genre: "", description: "TBC", actors: [ "", "", "" ], country: "", income:  , duration:  },
+
+db.movies.updateMany ( { rating: {$gt: 4.5}}, { $set : { highlighted: true } }, { upsert: true })
+db.movies.updateMany ( { genre: "Drama" }, { $set : { genre: "Bored"} })
+db.movies.deleteMany ( { year: {$lt: (2020-30) } })
+db.movies.find ({ country: "Argentina"})
+db.movies.find ({ genre: "Action" , rating: {$gt: 4.0}, year: {$gt: (2020-2)} })
