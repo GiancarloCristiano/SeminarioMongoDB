@@ -1,0 +1,77 @@
+﻿> use movix                                                        
+switched to db movix                                               
+> db.movies.insert([ { title: "Joker", year: 2019, rating: 5.0, gen
+Beetz" ], country: "US", income:  1074000000, duration: 1 }, { titl
+ "Florence Pugh", "Jack Reynor", "Will Poulter" ], country: "US", i
+Drama", description: "TBC", actors: [ "Song Kang-ho", "Lee Sun-kyun
+: "Slumdog Millionaire", year: 2008, rating: 4.4, genre: "Drama", d
+gland", income:  377000000, duration: 1 }, { title: "Life is beauti
+enigni", "Nicoletta Braschi", "Giorgio Cantarini" ], country: "Ital
+ rating: 3.6, genre: "Comedy", description: "TBC", actors: [ "Luis 
+, duration: 1 }, { title: "That damn rib", year: 1999, rating: 3.8,
+sy de Palma" ], country: "Argentina", income: 5000000 , duration: 1
+ctors: [ "Anthony Gonzalez", "Gael García Bernal", "Benjamin Bratt"
+995, rating: 4.2, genre: "Action", description: "TBC", actors: [ "R
+2000000, duration: 1 }, { title: "Amélie", year: 2001, rating: 4.0,
+Rufus" ], country: "France", income: 173000000 , duration: 1 }, { t
+, actors: [ "Robert Downey Jr.", "Chris Evans", "Mark Ruffalo" ], c
+rating: 3.9, genre: "Comedy", description: "TBC", actors: [ "Shawn 
+ 1 } ])                                                            
+BulkWriteResult({                                                  
+        "writeErrors" : [ ],                                       
+        "writeConcernErrors" : [ ],                                
+        "nInserted" : 12,                                          
+        "nUpserted" : 0,                                           
+        "nMatched" : 0,                                            
+        "nModified" : 0,                                           
+        "nRemoved" : 0,                                            
+        "upserted" : [ ]                                           
+})                                                                 
+> db.movies.find ({ year: 2018 })
+> db.movies.find ({ country: "US" }).limit(10).sort({rating:-1})
+{ "_id" : ObjectId("5f8e00d57fef47253200a50f"), "title" : "Breaking Bad", "year" : 2008, "rating" : 5, "genre" : "Crime drama", "description" : "TBC", "actors" : [ "Bryan Cranston", "Anna Gunn", "Aaron Paul" ], "country" : "US", "income" : 99999999, "duration" : 62, "highlighted" : true }
+{ "_id" : ObjectId("5f966744ad7991494cabb223"), "title" : "Joker", "year" : 2019, "rating" : 5, "genre" : "Drama", "description" : "TBC", "actors" : [ "Joaquim Phoenix", "Robert De Niro", "Zazie Beetz" ], "country" : "US", "income" : 1074000000, "duration" : 1 }
+{ "_id" : ObjectId("5f966744ad7991494cabb22d"), "title" : "Avengers: Endgame", "year" : 2019, "rating" : 5, "genre" : "Action", "description" : "TBC", "actors" : [ "Robert Downey Jr.", "Chris Evans", "Mark Ruffalo" ], "country" : "US", "income" : 2800000000, "duration" : 1 }
+{ "_id" : ObjectId("5f8e00d57fef47253200a50e"), "title" : "Dexter", "year" : 2006, "rating" : 4.8, "genre" : "Crime drama", "description" : "TBC", "actors" : [ "Michael C. Hall", "Julie Benz", "Jennifer Carpenter" ], "country" : "US", "income" : 10000000, "duration" : 96, "highlighted" : true }
+{ "_id" : ObjectId("5f966744ad7991494cabb224"), "title" : "Midsommar", "year" : 2019, "rating" : 4.7, "genre" : "Terror", "description" : "TBC", "actors" : [ "Florence Pugh", "Jack Reynor", "Will Poulter" ], "country" : "US", "income" : 42000000, "duration" : 1 }
+{ "_id" : ObjectId("5f966744ad7991494cabb22a"), "title" : "Coco", "year" : 2017, "rating" : 4.7, "genre" : "Animation", "description" : "TBC", "actors" : [ "Anthony Gonzalez", "Gael García Bernal", "Benjamin Bratt" ], "country" : "US", "income" : 807000000, "duration" : 1 }
+{ "_id" : ObjectId("5f966744ad7991494cabb22b"), "title" : "Mortal Kombat", "year" : 1995, "rating" : 4.2, "genre" : "Action", "description" : "TBC", "actors" : [ "Robin Shou", "Cary-Hiroyuki Tagawa", "Christopher Lambert" ], "country" : "US", "income" : 122000000, "duration" : 1 }
+{ "_id" : ObjectId("5f8e03f97fef47253200a513"), "title" : "Stranger Things", "year" : 2016, "rating" : 4.1, "genre" : "Science fiction", "description" : "TBC", "actors" : [ "Winona Ryder", "David Harbour", "Finn Wolfhard" ], "country" : "US", "income" : 5000000, "duration" : 25 }
+{ "_id" : ObjectId("5f966744ad7991494cabb22e"), "title" : "White chicks", "year" : 2004, "rating" : 3.9, "genre" : "Comedy", "description" : "TBC", "actors" : [ "Shawn Wayans", "Marlon Wayans", "Terry Crews" ], "country" : "US", "income" : 113000000, "duration" : 1 }
+> db.movies.find().limit(5).sort({ income: -1 })
+{ "_id" : ObjectId("5f966744ad7991494cabb22d"), "title" : "Avengers: Endgame", "year" : 2019, "rating" : 5, "genre" : "Action", "description" : "TBC", "actors" : [ "Robert Downey Jr.", "Chris Evans", "Mark Ruffalo" ], "country" : "US", "income" : 2800000000, "duration" : 1 }
+{ "_id" : ObjectId("5f966744ad7991494cabb223"), "title" : "Joker", "year" : 2019, "rating" : 5, "genre" : "Drama", "description" : "TBC", "actors" : [ "Joaquim Phoenix", "Robert De Niro", "Zazie Beetz" ], "country" : "US", "income" : 1074000000, "duration" : 1 }
+{ "_id" : ObjectId("5f966744ad7991494cabb22a"), "title" : "Coco", "year" : 2017, "rating" : 4.7, "genre" : "Animation", "description" : "TBC", "actors" : [ "Anthony Gonzalez", "Gael García Bernal", "Benjamin Bratt" ], "country" : "US", "income" : 807000000, "duration" : 1 }
+{ "_id" : ObjectId("5f966744ad7991494cabb226"), "title" : "Slumdog Millionaire", "year" : 2008, "rating" : 4.4, "genre" : "Drama", "description" : "TBC", "actors" : [ "Dev Patel", "Freida Pinto", "Anil Kapoor" ], "country" : "England", "income" : 377000000, "duration" : 1 }
+{ "_id" : ObjectId("5f966744ad7991494cabb225"), "title" : "Parasite", "year" : 2019, "rating" : 4.9, "genre" : "Drama", "description" : "TBC", "actors" : [ "Song Kang-ho", "Lee Sun-kyun", "Cho Yeo-jeong" ], "country" : "South Korea", "income" : 254000000, "duration" : 1 }
+> db.movies.find().skip(5).limit(5).sort({ income: -1 })
+{ "_id" : ObjectId("5f966744ad7991494cabb227"), "title" : "Life is beautiful", "year" : 1997, "rating" : 5, "genre" : "Drama", "description" : "TBC", "actors" : [ "Roberto Benigni", "Nicoletta Braschi", "Giorgio Cantarini" ], "country" : "Italy", "income" : 229000000, "duration" : 1 }
+{ "_id" : ObjectId("5f966744ad7991494cabb22c"), "title" : "Amélie", "year" : 2001, "rating" : 4, "genre" : "Comedy", "description" : "TBC", "actors" : [ "Audrey Tautou", "Mathieu Kassovitz", "Rufus" ], "country" : "France", "income" : 173000000, "duration" : 1 }
+{ "_id" : ObjectId("5f966744ad7991494cabb22b"), "title" : "Mortal Kombat", "year" : 1995, "rating" : 4.2, "genre" : "Action", "description" : "TBC", "actors" : [ "Robin Shou", "Cary-Hiroyuki Tagawa", "Christopher Lambert" ], "country" : "US", "income" : 122000000, "duration" : 1 }
+{ "_id" : ObjectId("5f966744ad7991494cabb22e"), "title" : "White chicks", "year" : 2004, "rating" : 3.9, "genre" : "Comedy", "description" : "TBC", "actors" : [ "Shawn Wayans", "Marlon Wayans", "Terry Crews" ], "country" : "US", "income" : 113000000, "duration" : 1 }
+{ "_id" : ObjectId("5f8e00d57fef47253200a50f"), "title" : "Breaking Bad", "year" : 2008, "rating" : 5, "genre" : "Crime drama", "description" : "TBC", "actors" : [ "Bryan Cranston", "Anna Gunn", "Aaron Paul" ], "country" : "US", "income" : 99999999, "duration" : 62, "highlighted" : true }
+> db.movies.find ({ country: "US"}, {title: 1, genre: 1, _id: 0}).limit(10).sort({ rating: -1 })
+{ "title" : "Breaking Bad", "genre" : "Crime drama" }
+{ "title" : "Joker", "genre" : "Drama" }
+{ "title" : "Avengers: Endgame", "genre" : "Action" }
+{ "title" : "Dexter", "genre" : "Crime drama" }
+{ "title" : "Midsommar", "genre" : "Terror" }
+{ "title" : "Coco", "genre" : "Animation" }
+{ "title" : "Mortal Kombat", "genre" : "Action" }
+{ "title" : "Stranger Things", "genre" : "Science fiction" }
+{ "title" : "White chicks", "genre" : "Comedy" }
+> db.movies.find({}, {title: 1, genre: 1, _id: 0} ).limit(5).sort({ income: -1 })
+{ "title" : "Avengers: Endgame", "genre" : "Action" }
+{ "title" : "Joker", "genre" : "Drama" }
+{ "title" : "Coco", "genre" : "Animation" }
+{ "title" : "Slumdog Millionaire", "genre" : "Drama" }
+{ "title" : "Parasite", "genre" : "Drama" }
+> db.movies.distinct("country")
+
+        "Argentina",
+        "England",
+        "France",
+        "Italy",
+        "South Korea",
+        "Spain",
+        "US"

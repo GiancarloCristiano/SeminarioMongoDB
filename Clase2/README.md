@@ -1,6 +1,6 @@
 # Actividad Clase 2
 
-[:arrow_backward: volver al index](./README.md)
+[:arrow_backward: volver al index](../README.md)
 
 1. Crear una nueva base de datos de un sistema de streaming de video (ej. Netflix, Flow, Amazon Prime) que permita almacenar movies.
 
