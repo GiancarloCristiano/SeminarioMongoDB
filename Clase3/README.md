@@ -50,12 +50,12 @@ películas con distinto contenido.
 6. Repetir query 3 y 4 pero retornando sólo el título y genre.
 
     ```js
-    db.movies.find (
+    > db.movies.find (
         { country: "US"},
         {title: 1, genre: 1, _id: 0}
         ).limit(10).sort({ rating: -1 })  
 
-    db.movies.find (
+    > db.movies.find (
         {}, {title: 1, genre: 1, _id: 0}
         ).limit(5).sort({ income: -1 })
     ```
@@ -63,5 +63,5 @@ películas con distinto contenido.
 7. Mostrar los distintos países que existen en la base de datos.
 
     ```js
-    db.movies.distinct("country")
+    > db.movies.distinct("country")
     ```
