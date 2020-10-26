@@ -71,5 +71,3 @@ que hayan salido los últimos 2 años.
         year: {$gt: new Date().getFullYear() - 2}
     })
     ```
-
-[:arrow_double_up: top](#actividad-2)
