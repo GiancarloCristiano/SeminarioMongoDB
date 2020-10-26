@@ -67,4 +67,4 @@ Comentarios:
     Por ahora hice de prueba las fechas de nacimiento con String.
     Me costó bastante podes hacerlo andar, primero no me tomaba Mongo, tuve q agregar el path en Windows, luego no podía copiar los JSON para no tipear todo (lo resolví con Cmder ya que  cmd y gitbash me trajeron diferentes problemas). Una vez que pude cargar mi primer json, ahí no tuve más problemas hasta ahora.
 
-   [:arrow_double_up: top](./README)
+[:arrow_double_up: top](#actividad-1)
