@@ -26,7 +26,7 @@ BulkWriteResult({
                 ObjectId("5f8e03f97fef47253200a514")
         ]
 }
-> db.movies.updateMany ( { rating: {$gt: 4.5}}, { $set : { highlighted: true } }, { upsert: true })
+> db.movies.updateMany ( { rating: {$gt: 4.5}}, { $set : { highlighted: true } })
 { "acknowledged" : true, "matchedCount" : 2, "modifiedCount" : 2 }
 > db.movies.updateMany ( { genre: "Drama" }, { $set : { genre: "Bored"} })
 { "acknowledged" : true, "matchedCount" : 0, "modifiedCount" : 0 }

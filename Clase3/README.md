@@ -1,0 +1,3 @@
+Clase 1.
+Agregados todos los ejercicios. Por ahora hice de prueba las fechas de nacimietno con String, la idea es luego volverlos a cargar, ya tengo el backup en el .txt.
+Me costó bastante podes hacerlo andar, primero no me tomaba Mongo, tuve q agregar el path en Windows, luego no podía copiar los JSON para no tipear todo (lo resolví con Cmder ya que  cmd y gitbash me trajeron diferentes problemas). Una vez que pude cargar mi primer json, ahí no tuve más problemas hasta ahora.

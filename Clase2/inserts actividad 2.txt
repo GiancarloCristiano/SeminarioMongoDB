@@ -11,7 +11,7 @@ db.movies.insertMany([{ title: "Stranger Things", year: 2016, rating: 4.1, genre
 
 { title: "", year: , rating: , genre: "", description: "TBC", actors: [ "", "", "" ], country: "", income:  , duration:  },
 
-db.movies.updateMany ( { rating: {$gt: 4.5}}, { $set : { highlighted: true } }, { upsert: true })
+db.movies.updateMany ( { rating: {$gt: 4.5}}, { $set : { highlighted: true } })
 db.movies.updateMany ( { genre: "Drama" }, { $set : { genre: "Bored"} })
 db.movies.deleteMany ( { year: {$lt: (2020-30) } })
 db.movies.find ({ country: "Argentina"})
