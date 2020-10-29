@@ -1,0 +1,53 @@
+﻿> use movix                                                        
+switched to db movix
+> db.movies.count()
+18
+> db.movies.insert([ { title: "Split", year: 2016, rating: 4.0, genre: "Terror", description: "TBC", actors: [ "James McAvoy", "Anya Taylor-Joy", "Betty Buckley" ], country: "US", income: 9000000 , duration: 1 }, { title: "Inside Out", year: 2015, rating: 4.7, genre: "Animation", description: "TBC", actors: [ "Amy Poehler", "Phyllis Smith", "Richard Kind" ], country: "US", income: 175000000 , duration: 1 }, { title: "Zootopia", year: 2016, rating: 4.9, genre: "Animation", description: "TBC", actors: [ "Ginnifer Goodwin", "Jason Bateman", "Idris Elba" ], country: "US", income: 1024784195 , duration: 1 }, { title: "Richie Rich", year: 1994, rating: 3.9, genre: "Comedy", description: "TBC", actors: [ "Macaulay Culkin", "Edward Herrmann", "Claudia Schiffer" ], country: "US", income: 15000000 , duration: 1 }, { title: "Friends", year: 1994, rating: 4.7, genre: "Comedy", description: "TBC", actors: [ "Jennifer Aniston", "Courteney Cox", "Lisa Kudrow" ], country: "US", income: 10000000 , duration: 236 }, { title: "The Big Bang Theory", year: 2007, rating: 4.0, genre: "Comedy", description: "TBC", actors: [ "Jim Parsons", "Kaley Cuoco", "Simon Helberg" ], country: "US", income: 19000000 , duration: 279 }, { title: "Casablanca", year: 1942, rating: 4.2, genre: "Drama", description: "TBC", actors: [ "Humphrey Bogart", "Ingrid Bergman", "Paul Henreid" ], country: "US", income: 1000000 , duration: 1 }, { title: "Luis Miguel, The Series", year: 2018, rating: 3.7, genre: "Drama", description: "TBC", actors: [ "Diego Boneta", "Óscar Jaenada", "Anna Favella" ], country: "Mexico", income: 5000000 , duration: 13 }, { title: "Nicky Jam: El ganador", year: 2018, rating: 3.2, genre: "Biographical", description: "TBC", actors: [ "Nicky Jam", "José Arroyo", "Darkiel" ], country: "US", income: 4000000 , duration: 13 }, { title: "Pulp Fiction", year: 1994, rating: 5.0, genre: "Thriller", description: "TBC", actors: [ "John Travolta", "Samuel Jackson", "Uma Thurman" ], country: "US", income: 8000000 , duration: 1 }, { title: "Titanic", year: 1997, rating: 5.0, genre: "Drama", description: "TBC", actors: [ "Leonardo DiCaprio", "Kate Winslet", "Billy Zane" ], country: "US", income: 218000000 , duration: 1 }, { title: "Kill Bill", year: 2003, rating: 5.0, genre: "Action", description: "TBC", actors: [ "Uma Thurman", "David Carradine", "Lucy Liu" ], country: "US", income: 60000000 , duration: 1 }, { title: "The Shinning", year: 1980, rating: 4.6, genre: "Terror", description: "TBC", actors: [ "Jack Nicholson", "Shelley Duvall", "Danny Lloyd" ], country: "US", income: 44000000 , duration: 1 }, { title: "Jeepers Creepers", year: 2001, rating: 4.5, genre: "Terror", description: "TBC", actors: [ "Gina Philips", "Justin Long", "Jonathan Breck" ], country: "US", income: 58000000 , duration: 1 }, { title: "The Conjuring", year: 2013, rating: 4.3, genre: "Terror", description: "TBC", actors: [ "Patrick Wilson", "Vera Farmiga", "Ron Livingston" ], country: "US", income: 318000000 , duration: 1 } ])
+BulkWriteResult({
+        "writeErrors" : [ ],
+        "writeConcernErrors" : [ ],
+        "nInserted" : 15,
+        "nUpserted" : 0,
+        "nMatched" : 0,
+        "nModified" : 0,
+        "nRemoved" : 0,
+        "upserted" : [ ]
+})
+> db.movies.createIndex({ rating: 1 })
+
+        "createdCollectionAutomatically" : false,
+        "numIndexesBefore" : 1,
+        "numIndexesAfter" : 2,
+        "ok" : 1
+}
+> db.movies.find({}, {title: 1, rating: 1, _id: 0} ).limit(10).sort({ rating: -1 })
+{ "title" : "Kill Bill", "rating" : 5 }
+{ "title" : "Titanic", "rating" : 5 }
+{ "title" : "Pulp Fiction", "rating" : 5 }
+{ "title" : "Avengers: Endgame", "rating" : 5 }
+{ "title" : "Life is beautiful", "rating" : 5 }
+{ "title" : "Joker", "rating" : 5 }
+{ "title" : "Breaking Bad", "rating" : 5 }
+{ "title" : "Zootopia", "rating" : 4.9 }
+{ "title" : "Parasite", "rating" : 4.9 }
+{ "title" : "Dexter", "rating" : 4.8 }
+> db.movies.find({}, {title: 1, rating: 1, _id: 0} ).skip(10).limit(5).sort({ rating: -1 })
+{ "title" : "Friends", "rating" : 4.7 }
+{ "title" : "Inside Out", "rating" : 4.7 }
+{ "title" : "Coco", "rating" : 4.7 }
+{ "title" : "Midsommar", "rating" : 4.7 }
+{ "title" : "The Shinning", "rating" : 4.6 }
+> db.movies.createIndex({ title: "text", description: "text" })
+
+        "createdCollectionAutomatically" : false,
+        "numIndexesBefore" : 2,
+        "numIndexesAfter" : 3,
+        "ok" : 1
+}
+> db.movies.count( {$text: { $search: "tbc" }} )
+33
+> db.movies.find( {$text: { $search: "the" }} )
+> db.movies.find( {$text: { $search: "bad" }} )
+{ "_id" : ObjectId("5f8e00d57fef47253200a50f"), "title" : "Breaking Bad", "year" : 2008, "rating" : 5, "genre" : "Crime drama", "description" : "TBC", "actors" : [ "Bryan Cranston", "Anna Gunn", "Aaron Paul" ], "country" : "US", "income" : 99999999, "duration" : 62, "highlighted" : true }
+> db.movies.find( {$text: { $search: "ing" }} )
+> db.movies.find( {$text: { $search: "tb" }} )
