@@ -8,7 +8,7 @@ mongoose.connect('mongodb://localhost:27017/ecommerce', {useNewUrlParser: true})
 const MyProducts = mongoose.model('products', new Schema({ name: String, description: String, stock: Number, price: Number }));
 const MySales = mongoose.model('sales', new Schema({ products: [String], totalPrice: Number, address: String }));
 
-
+//SALES
 app.get('/sales', async (req, res) => {
   const sales = await MySales.find({});
   try {
@@ -18,18 +18,17 @@ app.get('/sales', async (req, res) => {
   }
 });
 
-/*
-app.get('/products', function (req, res) {
-  MyProducts.find(function(error, result) {
-    res.send(result)
-  });
-})
+app.post('/sale', async (req, res) => {
+  const sale = new MySales(req.body);
+  try {
+    await sale.save();
+    res.send(sale);
+  } catch (err) {
+    res.status(500).send(err);
+  }
+});
 
-app.get('/products/:id', function (req, res) {
-    const rta = MyProducts.findOne({ _id: req.params.id })
-    res.send(rta)
-  });*/
-
+//PRODUCTS
   app.get('/products', async (req, res) => {
     const products = await MyProducts.find({});
     try {
@@ -71,30 +70,9 @@ app.get('/products/:id', function (req, res) {
   })
 
 
-
-/*
-app.get("/posts/:id", async (req, res) => {
-	const post = await Post.findOne({ _id: req.params.id })
-	res.send(post)
-})*/
-
-
-/*
-
-app.put('/products', function (req, res) {
-  MyProducts.find(function(error, result) {
-    //console.log(result)
-    res.send(result)
-  });
-})
-
-
-
-app.put('/user', function (req, res) {
-  res.send('Got a PUT request at /user');
-});*/
-
-
+  //COMO LLAMAR A LOS PRODUCTOS DESDE VENTAS. AL TRAERLOS, CHEQUEAR SI EXISTE, SI HAY STOCK Y MODIFICAR EL MISMO.
+  //EN VENTAS MANDAMOS UN ARRAY DE OBJETOS O DE IDs?
+  //
 
 
 
