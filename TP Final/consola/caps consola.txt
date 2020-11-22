@@ -1,0 +1,33 @@
+﻿productos
+nombre, descripciom, stock, precio
+
+ventas
+conjunto de prod, precio total, direccion de entrega.
+
+
+> mongod
+> mongo
+> show dbs
+> use ecommerce
+switched to db ecommerce
+> db.createCollection("products")
+{ "ok" : 1 }
+> db.createCollection("sales")
+{ "ok" : 1 }
+> db.products.insert([ { name: "Logitech Keyboard", description: "TBC", stock: 40, price: 2000 }, { name: "Cannon Camera", description: "TBC", stock: 8, price: 20000 }, { name: "Xbox One Gamepad", description: "TBC", stock: 150, price: 10500 }, { name: "Shure Microphone", description: "TBC", stock: 32, price: 6000 }, { name: "MSI Mouse", description: "TBC", stock: 62, price: 3000 } ])
+BulkWriteResult({
+        "writeErrors" : [ ],
+        "writeConcernErrors" : [ ],
+        "nInserted" : 5,
+        "nUpserted" : 0,
+        "nMatched" : 0,
+        "nModified" : 0,
+        "nRemoved" : 0,
+        "upserted" : [ ]
+})
+> db.products.find()
+{ "_id" : ObjectId("5fbabb030bd7ded8b821cb9d"), "name" : "Logitech Keyboard", "description" : "TBC", "stock" : 40, "price" : 2000 }
+{ "_id" : ObjectId("5fbabb030bd7ded8b821cb9e"), "name" : "Cannon Camera", "description" : "TBC", "stock" : 8, "price" : 20000 }
+{ "_id" : ObjectId("5fbabb030bd7ded8b821cb9f"), "name" : "Xbox One Gamepad", "description" : "TBC", "stock" : 150, "price" : 10500 }
+{ "_id" : ObjectId("5fbabb030bd7ded8b821cba0"), "name" : "Shure Microphone", "description" : "TBC", "stock" : 32, "price" : 6000 }
+{ "_id" : ObjectId("5fbabb030bd7ded8b821cba1"), "name" : "MSI Mouse", "description" : "TBC", "stock" : 62, "price" : 3000 }
