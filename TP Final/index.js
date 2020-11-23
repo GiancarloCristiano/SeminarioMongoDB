@@ -3,16 +3,18 @@ const app = express()
 const mongoose = require('mongoose')
 const { Schema } = mongoose;
 const bodyParser = require("body-parser");
-app.use(express.json()); // Make sure it comes back as json
+app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-mongoose.connect('mongodb://localhost:27017/ecommerce', {useNewUrlParser: true});
+//mongoose.connect('mongodb://localhost:27017/ecommerce', {useNewUrlParser: true});
+mongoose.connect('mongodb+srv://mongo-user:seminario@seminariomongo.uuywt.mongodb.net/ecommerce?retryWrites=true&w=majority', {useNewUrlParser: true});
+
 const MyProducts = mongoose.model('products', new Schema({
    name: String, description: String, stock: Number, price: Number }, {
-  versionKey: false // You should be aware of the outcome after set to false
+  versionKey: false
 }));
 const MySales = mongoose.model('sales', new Schema({ products: [String], totalPrice: Number, address: String }, {
-  versionKey: false // You should be aware of the outcome after set to false
+  versionKey: false
 }));
 
 //SALES
@@ -57,7 +59,6 @@ async function sellProduct (products) {
     await MyProducts.findByIdAndUpdate(prodId, new MyProducts(product))
   }
 }
-
 
 
 app.delete('/sale/:id', async (req, res) => {
@@ -111,18 +112,6 @@ app.delete('/sale/:id', async (req, res) => {
       res.status(500).send(err)
     }
   })
-
-
-  //COMO LLAMAR A LOS PRODUCTOS DESDE VENTAS. AL TRAERLOS, CHEQUEAR SI EXISTE, SI HAY STOCK Y MODIFICAR EL MISMO.
-  //EN VENTAS MANDAMOS UN ARRAY DE OBJETOS O DE IDs?
-  //
-
-
-
-
-
-
-
 
 
 
