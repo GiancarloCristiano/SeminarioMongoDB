@@ -28,16 +28,11 @@ app.get('/sales', async (req, res) => {
 app.post('/sale',  async (req, res) => {
   let body = req.body;
   let totalPrice = await getPrice(body.products);
-  
-  
-  console.log(totalPrice)
   try {
   const sale = new MySales();
   sale.products = body.products;
   sale.totalPrice = totalPrice; 
   sale.address = body.address;
-
-  
     await sale.save();
     res.send(sale);
   } catch (err) {
@@ -46,10 +41,9 @@ app.post('/sale',  async (req, res) => {
 });
 
 async function getPrice (products) {
-  
   let totalPrice = 0;
   for (const prodId of products) {
-    const product = await  MyProducts.findOne(prodId);
+    const product = await MyProducts.findOne(prodId);
     totalPrice += product.price;
   }
   return totalPrice;
