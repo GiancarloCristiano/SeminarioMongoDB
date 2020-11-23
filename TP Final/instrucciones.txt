@@ -1,0 +1,4 @@
+﻿bajar el repo
+en la carpeta raíz abrir consola y ejecutar "npm i" o "npm install" para descargar todas las dependencias
+insertar el comando nodemon index.js
+una vez levantado, se puede navegar en el puerto 3000.
