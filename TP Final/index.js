@@ -28,6 +28,7 @@ app.get('/sales', async (req, res) => {
 app.post('/sale',  async (req, res) => {
   let body = req.body;
   let totalPrice = await getPrice(body.products);
+  await sellProduct(body.products);
   try {
   const sale = new MySales();
   sale.products = body.products;
@@ -48,6 +49,16 @@ async function getPrice (products) {
   }
   return totalPrice;
 }
+
+async function sellProduct (products) {
+    for (const prodId of products) {
+    const product = await MyProducts.findOne(prodId);
+    product.stock--;
+    await MyProducts.findByIdAndUpdate(prodId, new MyProducts(product))
+  }
+}
+
+
 
 app.delete('/sale/:id', async (req, res) => {
   try {
@@ -95,7 +106,6 @@ app.delete('/sale/:id', async (req, res) => {
     console.log(product)
     try {
       await MyProducts.findByIdAndUpdate(req.params.id, product)
-      await MyProducts.save()
       res.send(product)
     } catch (err) {
       res.status(500).send(err)
