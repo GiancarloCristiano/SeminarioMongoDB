@@ -1,12 +1,19 @@
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
- 
 const { Schema } = mongoose;
-
+const bodyParser = require("body-parser");
+app.use(express.json()); // Make sure it comes back as json
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 mongoose.connect('mongodb://localhost:27017/ecommerce', {useNewUrlParser: true});
-const MyProducts = mongoose.model('products', new Schema({ name: String, description: String, stock: Number, price: Number }));
-const MySales = mongoose.model('sales', new Schema({ products: [String], totalPrice: Number, address: String }));
+const MyProducts = mongoose.model('products', new Schema({
+   name: String, description: String, stock: Number, price: Number }, {
+  versionKey: false // You should be aware of the outcome after set to false
+}));
+const MySales = mongoose.model('sales', new Schema({ products: [String], totalPrice: Number, address: String }, {
+  versionKey: false // You should be aware of the outcome after set to false
+}));
 
 //SALES
 app.get('/sales', async (req, res) => {
@@ -59,9 +66,11 @@ app.post('/sale', async (req, res) => {
     }
   })
 
-  app.patch('/product/:id', async (req, res) => {
+  app.put('/product/:id', async (req, res) => {
+    const product = new MyProducts(req.body);
+    console.log(product)
     try {
-      await MyProducts.findByIdAndUpdate(req.params.id, req.body)
+      await MyProducts.findByIdAndUpdate(req.params.id, product)
       await MyProducts.save()
       res.send(product)
     } catch (err) {
