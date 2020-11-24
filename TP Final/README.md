@@ -70,6 +70,6 @@ Además, intentamos sin éxito cargarlo en [herokuapp](https://dashboard.heroku.
 
 ### Instrucciones para levantar el ambiente:
 1. Bajar el repo
-2. En la carpeta raíz abrir consola y ejecutar "npm i" o "npm install" para descargar todas las dependencias
-3. Insertar el comando nodemon index.js
-4. Una vez levantado, se puede navegar en el puerto 3000
+2. En la carpeta raíz abrir consola y ejecutar *npm i* o *npm install* para descargar todas las dependencias
+3. Insertar el comando **nodemon index.js**
+4. Una vez levantado, se puede navegar en el puerto **3000**
