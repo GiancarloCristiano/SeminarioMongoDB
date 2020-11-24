@@ -1,4 +1,5 @@
-# TP Final - por Giancarlo Cristiano y Juan Pablo Pereira
+# TP Final
+### por Giancarlo Cristiano y Juan Pablo Pereira
 
 [:arrow_backward: volver al index](../README.md)
 
@@ -37,5 +38,13 @@ Para comenzar con el posterior testing, insertamos desde mongo algunos productos
    { name: "Shure Microphone", description: "TBC", stock: 32, price: 6000 },
    { name: "MSI Mouse", description: "TBC", stock: 62, price: 3000 }
    ])
+   ```
 
+Una vez que tuvimos la base con info cargada, procedemos a abrir la consola en la carpeta raíz del trabajo e instalamos las dependencias para trabajar con **node.js**
+Vamos a utilizar **mongoose** para conectar node con mongoDB, **express** para crear la api y **nodemon** para reiniciar automáticamente el servidor ante cada cambio.
+
+   ```js
+   npm i mongoose
+   npm i express
+   npm i -g nodemon
    ```
