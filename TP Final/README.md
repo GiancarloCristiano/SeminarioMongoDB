@@ -60,7 +60,7 @@ Mientras construímos el CRUD, también instalamos **body-parser** debido a que 
 
 Al haberlo solucionado, notamos que nos agregaba un atributo "__v" con valor 0. Para quitarlo consultamos en [StackOverFlow](https://stackoverflow.com/questions/12495891/what-is-the-v-field-in-mongoose) para que los insert queden idénticos a si lo hiciéramos desde mongo.
 
-Una vez que tuvimos listo el CRUD de productos, hicimos el get de ventas y al hacer el post, incorporamos algo más de lógica, buscando el producto por ID para decrementar el stock y calculando automáticamente el precio total. (Consultarlo desde [index.js](TP%20Final/index.js))
+Una vez que tuvimos listo el CRUD de productos, hicimos el get de ventas y al hacer el post, incorporamos algo más de lógica, buscando el producto por ID para decrementar el stock y calculando automáticamente el precio total. (Consultarlo desde [index.js](/index.js))
 
 
 
