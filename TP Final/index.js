@@ -17,6 +17,50 @@ const MySales = mongoose.model('sales', new Schema({ products: [String], totalPr
   versionKey: false
 }));
 
+//PRODUCTS
+  app.get('/products', async (req, res) => {
+    const products = await MyProducts.find({});
+    try {
+      res.send(products);
+    } catch (err) {
+      res.status(500).send(err);
+    }
+  });
+
+  app.post('/product', async (req, res) => {
+    const product = new MyProducts(req.body);
+    try {
+      await product.save();
+      res.send(product);
+    } catch (err) {
+      res.status(500).send(err);
+    }
+  });
+  
+
+  app.delete('/product/:id', async (req, res) => {
+    try {
+      const product = await MyProducts.findByIdAndDelete(req.params.id)
+      if (!product) res.status(404).send("No item found")
+      res.status(200).send()
+    } catch (err) {
+      res.status(500).send(err)
+    }
+  })
+
+  app.put('/product/:id', async (req, res) => {
+    const product = new MyProducts(req.body);
+    console.log(product)
+    try {
+      await MyProducts.findByIdAndUpdate(req.params.id, product)
+      res.send(product)
+    } catch (err) {
+      res.status(500).send(err)
+    }
+  })
+
+
+
 //SALES
 app.get('/sales', async (req, res) => {
   const sales = await MySales.find({});
@@ -60,7 +104,6 @@ async function sellProduct (products) {
   }
 }
 
-
 app.delete('/sale/:id', async (req, res) => {
   try {
     const sale = await MySales.findByIdAndDelete(req.params.id)
@@ -71,47 +114,7 @@ app.delete('/sale/:id', async (req, res) => {
   }
 })
 
-//PRODUCTS
-  app.get('/products', async (req, res) => {
-    const products = await MyProducts.find({});
-    try {
-      res.send(products);
-    } catch (err) {
-      res.status(500).send(err);
-    }
-  });
 
-  app.post('/product', async (req, res) => {
-    const product = new MyProducts(req.body);
-    try {
-      await product.save();
-      res.send(product);
-    } catch (err) {
-      res.status(500).send(err);
-    }
-  });
-  
-
-  app.delete('/product/:id', async (req, res) => {
-    try {
-      const product = await MyProducts.findByIdAndDelete(req.params.id)
-      if (!product) res.status(404).send("No item found")
-      res.status(200).send()
-    } catch (err) {
-      res.status(500).send(err)
-    }
-  })
-
-  app.put('/product/:id', async (req, res) => {
-    const product = new MyProducts(req.body);
-    console.log(product)
-    try {
-      await MyProducts.findByIdAndUpdate(req.params.id, product)
-      res.send(product)
-    } catch (err) {
-      res.status(500).send(err)
-    }
-  })
 
 
 

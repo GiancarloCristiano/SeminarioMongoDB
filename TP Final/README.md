@@ -48,3 +48,10 @@ Vamos a utilizar **mongoose** para conectar node con mongoDB, **express** para c
    npm i express
    npm i -g nodemon
    ```
+
+Luego de instalar y configurar las mismas, construímos nuestro index.js con el CRUD basándonos principalmente en [este tutorial de Digital Ocean](https://www.digitalocean.com/community/tutorials/nodejs-crud-operations-mongoose-mongodb-atlas)
+
+Cabe destacar que fuimos consultando otras webs como [este otro tuto en CodeforGeek](https://codeforgeek.com/handle-get-post-request-express-4/).
+Mientras construímos el CRUD, también instalamos **body-parser** debido a que no estábamos logrando traer el cuerpo del request en los post y put que estábamos haciendo en **Postman**
+
+ 
