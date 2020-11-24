@@ -12,5 +12,13 @@
 { name: "MSI Mouse", description: "TBC", stock: 62, price: 3000 }
 ])
 > db.products.find()
-> db.sales.insert[(
-{ products: [ 
+> db.sales.find(
+{
+   $lookup:
+     {
+       from: products,
+       localField: sales.[,
+       foreignField: _id,
+       as: product:
+     }
+})
