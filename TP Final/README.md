@@ -41,7 +41,7 @@ Para comenzar con el posterior testing, insertamos desde mongo algunos productos
    ```
 
 Una vez que tuvimos la base con info cargada, procedemos a abrir la consola en la carpeta raíz del trabajo e instalamos las dependencias para trabajar con **node.js**
-Vamos a utilizar [**mongoose**](https://mongoosejs.com/) para conectar node con mongoDB, **express** para crear la api y **nodemon** para reiniciar automáticamente el servidor ante cada cambio.
+Vamos a utilizar [**mongoose**](https://mongoosejs.com/) para conectar node con mongoDB, [**express**](https://expressjs.com/es/) para crear la api y [**nodemon**](https://nodemon.io/) para reiniciar automáticamente el servidor ante cada cambio.
 
    ```js
    npm i mongoose
@@ -58,6 +58,10 @@ Mientras construímos el CRUD, también instalamos **body-parser** debido a que 
    npm i --S express body-parser
    ```
 
-Al haberlo solucionado, notamos que nos agregaba un atributo "__v" con valor 0. Para quitarlo consultamos en [esta web](https://stackoverflow.com/questions/12495891/what-is-the-v-field-in-mongoose) para que los insert queden idénticos a si lo hiciéramos desde mongo.
+Al haberlo solucionado, notamos que nos agregaba un atributo "__v" con valor 0. Para quitarlo consultamos en [StackOverFlow](https://stackoverflow.com/questions/12495891/what-is-the-v-field-in-mongoose) para que los insert queden idénticos a si lo hiciéramos desde mongo.
+
+Una vez que tuvimos listo el CRUD de productos, hicimos el get de ventas y al hacer el post, incorporamos algo más de lógica, buscando el producto por ID para decrementar el stock y calculando automáticamente el precio total. (Consultarlo desde [index.js](/index.js)
+
+
 
 
